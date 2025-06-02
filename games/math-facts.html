@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../index.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Math Facts</title>
+
+</head>
+<body>
+<div class="wrapper">
+
+<header>
+    <h1 >Play2Learn Logo</h1>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li>Games
+                <ul>
+                    <li><a href="anagram-hunt.html">Anagrum Hunt</a></li>
+                    <li><a href="math-facts.html">Math Practice</a></li>
+                </ul>
+              
+            </li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../login.html">Login</a></li>
+        </ul>
+    </nav> 
+</header>
+
+
+
+
+<main>
+    <!--Main page game-->
+<div id="mainGame">
+    <h1>Math Facts Practice</h1>
+
+    <label for="operation">Operation: </label>
+
+    <select id="operation">
+        <option>Addition</option>
+        <option>Subtraction</option>
+        <option>Multiplication</option>
+        <option>Division</option>
+    </select>
+
+    <button type="button" id="play">Go</button>
+
+    <ol>
+        <ul>1. Select operation</ul>
+        <ul>2. Press Go</ul>
+        <ul>3. How many problems can you slove in 30 seconds?</ul>
+    </ol>
+</div>
+    <!--Main  game-->
+<div class="hidden" id="startGame">
+    <h1>Math Facts Practice</h1>
+    <p id="currentOperation"></p>
+    <p id="currentTask"></p>
+    <textarea id="textarea" cols="7" rows="1"></textarea>
+    <div class="keypad">
+    <button data-value="1">1</button>
+    <button data-value="2">2</button>
+    <button data-value="3">3</button>
+    <button data-value="4">4</button>
+    <button data-value="5">5</button>
+    <button data-value="6">6</button>
+    <button data-value="7">7</button>
+    <button data-value="8">8</button>
+    <button data-value="9">9</button>
+    <button data-value="0">0</button>
+    <button id="clear">Clear</button>
+    </div>
+    <p id="counter"></p>
+    <p id="timer">30</p>
+</div>
+<!--End game-->
+<div class="hidden" id="endGame">
+    <h1>Math Facts Practice</h1>
+    <p id="currentOperation"></p>
+    <p>Times up!</p>
+    <p> Your final score is:</p>
+    <p id="counterFinal"></p>
+    <button id="playAgain">Play again</button>
+</div>
+</main>
+
+<footer>
+    <div>&copy 2025 Play2Learn</div>
+    <div>
+        <a href="../contact-us.html"><img src="../images/mail_4041996.png" alt="contact us"></a>
+        <a href="https://instagram.com"><img src="../images/instagram_1400829.png" alt="instagram"></a>
+        <a href="https://twitter.com"><img src="../images/twitter_5969020.png" alt="twitter"></a>
+        <a href="https://facebook.com"><img src="../images/facebook_1051309.png" alt="facebook"></a>
+    </div>
+
+</footer>
+
+</div>
+<script src="../math-facts.js"></script>
+</body>
+</html>

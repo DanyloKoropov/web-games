@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagram Hunt</title>
+    <link rel="stylesheet" href="../index.css">
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Play2Learn Logo</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li>Games
+                        <ul>
+                            <li><a href="anagram-hunt.html">Anagram Hunt</a></li>
+                            <li><a href="math-facts.html">Math Practice</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="block" style="margin-top: 120px; max-width: 600px; width: 100%; text-align: center;">
+                <div id="basic-page">
+                    <h1 style="margin-bottom: 20px;">Anagram Hunt</h1>
+                    <label for="selectnumbers" style="font-size: 1rem; font-weight: bold;">Number of letters:</label>
+                    <select id="selectnumbers" name="selectnumbers" style="margin: 0 10px; padding: 8px; border-radius: 6px; border: 1px solid #815050;">
+                        <option value="any">Any</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                    <button type="button" id="play">Play</button>
+                    <div class="centered-list">
+                        <ol>
+                            <li>Select the word length.</li>
+                            <li>Press Go. A word will appear along with the number of
+                            anagrams it has.</li>
+                            <li>Enter all the anagrams for the word that you can think of.
+                            Hurry. You only have 30 seconds.</li>
+                            </ol>
+                    </div>
+
+                </div>
+                <div id="beginning-game" class="hidden" style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 10px;">Anagram Hunt</h3>
+                    <h4><span id="current-word"></span></h4>
+                    <textarea id="gameinput" rows="10" cols="30" style="margin-top: 10px; padding: 10px; border: 1px solid #815050; border-radius: 8px; width: 100%; max-width: 400px;"></textarea>
+                    <div id="timer-display" style="margin-top: 20px; font-size: 1.2rem;">Time left</div>
+                </div>
+                <div id="lose-screen" class="hidden" style="margin-top: 30px; text-align: center;">
+                    <p style="font-size: 1.2rem; font-weight: bold;">Time’s up!</p>
+                    <p>The <span id="lengthArr"></span> anagrams for <span id="currentTask"></span> are:</p>
+                    <ul id="correct-words" class="centered-list"></ul>
+                    <p style="margin-top: 15px;">If there’s a mistake, please <a href="../contact-us.html" class="reset-all" style="color: #00796b; text-decoration: underline;">let us know</a>.</p>
+                    <button type="button" style="margin-top: 20px;"><a href="anagram-hunt.html">Play again</a></button>
+                </div>
+                <div id="win-screen" class="hidden" style="margin-top: 30px; text-align: center;">
+                    <h4>You did it! Congratulations!</h4>
+                    <p>It took you <span id="elapsed-time"></span></p>
+                    <p style="margin-top: 15px;">If there’s a mistake, please <a href="../contact-us.html" class="reset-all" style="color: #00796b; text-decoration: underline;">let us know</a>.</p>
+        
+                    <button type="button" style="margin-top: 20px;"><a href="anagram-hunt.html">Play again</a></button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div>&copy; 2025 Play2Learn</div>
+            <div>
+                <a href="../contact-us.html"><img src="../images/mail_4041996.png" alt="contact us"></a>
+                <a href="https://instagram.com"><img src="../images/instagram_1400829.png" alt="instagram"></a>
+                <a href="https://twitter.com"><img src="../images/twitter_5969020.png" alt="twitter"></a>
+                <a href="https://facebook.com"><img src="../images/facebook_1051309.png" alt="facebook"></a>
+            </div>
+        </footer>
+    </div>
+    <script src="../index.js"></script>
+</body>
+</html>

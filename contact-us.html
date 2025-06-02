@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Play2Learn Logo</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Games
+                        <ul>
+                            <li><a href="games/anagram-hunt.html">Anagram Hunt</a></li>
+                            <li><a href="games/math-facts.html">Math Practice</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <form id="contactForm" novalidate>
+                <h1>Contact Us</h1>
+                <label for="useremail">Your Email:</label>
+                <input type="email" id="useremail" name="useremail">
+                <div class="error" id="emailError"></div>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject">
+                <div class="error" id="subjectError"></div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" cols="40"></textarea>
+                <div class="error" id="messageError"></div>
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+        <footer>
+            <div>&copy; 2025 Play2Learn</div>
+            <div>
+                <a href="contact-us.html"><img src="images/mail_4041996.png" alt="contact us"></a>
+                <a href="https://instagram.com"><img src="images/instagram_1400829.png" alt="instagram"></a>
+                <a href="https://twitter.com"><img src="images/twitter_5969020.png" alt="twitter"></a>
+                <a href="https://facebook.com"><img src="images/facebook_1051309.png" alt="facebook"></a>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            const email = document.getElementById('useremail');
+            const subject = document.getElementById('subject');
+            const message = document.getElementById('message');
+            const emailError = document.getElementById('emailError');
+            const subjectError = document.getElementById('subjectError');
+            const messageError = document.getElementById('messageError');
+            function validateEmail() {
+                const value = email.value.trim();
+                const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+                email.classList.toggle('invalid', !valid);
+                emailError.textContent = valid ? '' : 'Please enter a valid email address.';
+                return valid;
+            }
+            function validateSubject() {
+                const value = subject.value.trim();
+                const valid = value.length >= 8 && value.length <= 20;
+                subject.classList.toggle('invalid', !valid);
+                subjectError.textContent = valid ? '' : 'Subject must be 8–20 characters.';
+                return valid;
+            }
+            function validateMessage() {
+                const value = message.value.trim();
+                const valid = value.length > 0;
+                message.classList.toggle('invalid', !valid);
+                messageError.textContent = valid ? '' : 'Message cannot be empty.';
+                return valid;
+            }
+            email.addEventListener('input', validateEmail);
+            subject.addEventListener('input', validateSubject);
+            message.addEventListener('input', validateMessage);
+            form.addEventListener('submit', (e) => {
+                if (!validateEmail() || !validateSubject() || !validateMessage()) {
+                    e.preventDefault();
+                } else {
+                    alert("Form submitted");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
