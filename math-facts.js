@@ -3,7 +3,11 @@ const allButtons = document.querySelectorAll('.keypad button[data-value]');
 const play = document.getElementById('play');
 let counter = 0;
 
-window.currentResult = null;
+
+window.currentResultAddition = null;
+window.currentResultSubtraction = null;
+window.currentResultMultiplication = null;
+window.currentResultDivision = null;
 
 function startCountdown(durationInSeconds, displayElement) {
     let remaining = durationInSeconds;
@@ -26,7 +30,7 @@ function startCountdown(durationInSeconds, displayElement) {
 
 document.getElementById('play').addEventListener('click', () => {
     const timerEl = document.getElementById('timer');
-    startCountdown(3, timerEl);
+    startCountdown(30, timerEl);
 });
 
 allButtons.forEach(btn => {
@@ -68,27 +72,76 @@ play.addEventListener('click', () => {
 
 //Addition
 const createAddition = () => {
-    const rundomNumber1 = Math.floor(Math.random() * 10 + 1);
-    const rundomNumber2 = Math.floor(Math.random() * 10 + 1);
-    window.currentResult = rundomNumber1 + rundomNumber2;
+    const randomNumber1 = Math.floor(Math.random() * 10 + 1);
+    const randomNumber2 = Math.floor(Math.random() * 10 + 1);
+    window.currentResultAddition = randomNumber1 + randomNumber2;
 
-    document.getElementById('currentTask').textContent = rundomNumber1 + ' + ' + rundomNumber2;
+    document.getElementById('currentTask').textContent = randomNumber1 + ' + ' + randomNumber2;
     document.getElementById('counter').textContent = 'Score ' + counter;
     textArea.value = '';
     textArea.focus();
 };
 //Subtraction
+const createSubtraction = () => {
+    const randomNumber1 = Math.floor(Math.random() * 10 + 1);
+    const randomNumber2 = Math.floor(Math.random() * 10 + 1);
+    if (randomNumber1 < randomNumber2) {
+        window.currentResultSubtraction = randomNumber2 - randomNumber1;
+        document.getElementById('currentTask').textContent = randomNumber2 + ' - ' + randomNumber1;
+    } else {
+
+        window.currentResultSubtraction = randomNumber1 - randomNumber2;
+        document.getElementById('currentTask').textContent = randomNumber1 + ' - ' + randomNumber2;
+    }
+    
+    
+
+
+    document.getElementById('counter').textContent = 'Score ' + counter;
+    textArea.value = '';
+    textArea.focus();
+};
 
 //Multiplication
+const createMultiplication = () => {
+    const randomNumber1 = Math.floor(Math.random() * 10 + 1);
+    const randomNumber2 = Math.floor(Math.random() * 10 + 1);
+    window.currentResultMultiplication = randomNumber1 * randomNumber2;
+
+    document.getElementById('currentTask').textContent = randomNumber1 + ' * ' + randomNumber2;
+    document.getElementById('counter').textContent = 'Score ' + counter;
+    textArea.value = '';
+    textArea.focus();
+};
 
 //Division
+const createDivision = () => {
+    function checkNumber() {
+        
+        const randomNumber1 = Math.floor(Math.random() * 100 + 1);
+        const randomNumber2 = Math.floor(Math.random() * 100 + 1);
+        if (randomNumber1 % randomNumber2 !== 0) {
+            return checkNumber();
+        } else {
+            window.currentResultDivision = randomNumber1 / randomNumber2;
+            document.getElementById('currentTask').textContent = randomNumber1 + ' / ' + randomNumber2;
+            document.getElementById('counter').textContent = 'Score ' + counter;
+            textArea.value = '';
+            textArea.focus();
+        };
+    };
+    checkNumber();
+  
+
+    
+};
 
 textArea.addEventListener('input', () => {
-    if (window.currentResult === null) return;
+
 
 
     const userResult = Number(textArea.value.trim());
-    if (!isNaN(userResult) && userResult === window.currentResult) {
+    if (!isNaN(userResult) && userResult === window.currentResultAddition  || userResult === window.currentResultSubtraction || userResult === window.currentResultMultiplication || userResult === window.currentResultDivision) {
 
         counter++
 
