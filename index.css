@@ -140,11 +140,11 @@ a, a:link, a:visited, a:hover, a:active {
 .quote figcaption {
   position: absolute;
   bottom: 10px; /* или 0, по желанию */
-  left: 1000px;   /* или 0, по желанию */
+  left: 1280px;   /* или 0, по желанию */
   font-style: italic;
   font-size: 0.9rem;
   color: #555;  /* любая подходящая окраска */
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 
 }
 
@@ -302,4 +302,108 @@ textarea.invalid {
   margin-top: 200px;
   margin-bottom: auto;
   /* или сокращённо: margin: 0 auto;  (0 — сверху/снизу, auto — слева/справа) */
+}
+
+
+figure {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Стили для игры Math Facts */
+#mainGame, #startGame, #endGame {
+    background-color: #dff5ff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 60px;
+}
+
+#operation {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #2c3e50;
+    margin: 10px;
+    font-size: 1rem;
+}
+
+#currentTask {
+    font-size: 2rem;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#textarea {
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid #2c3e50;
+    text-align: center;
+    width: 100px;
+    margin: 10px 0;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.keypad button {
+    background-color: #34495e;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.keypad button:hover {
+    background-color: #2c3e50;
+}
+
+#clear {
+    grid-column: span 3;
+    background-color: #c0392b;
+}
+
+#clear:hover {
+    background-color: #a93226;
+}
+
+#timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 20px 0;
+}
+
+#counter, #counterFinal {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin: 15px 0;
+}
+
+#playAgain {
+    background-color: #27ae60;
+    margin-top: 20px;
+}
+
+#playAgain:hover {
+    background-color: #219a52;
+}
+
+#currentOperation {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
 }
